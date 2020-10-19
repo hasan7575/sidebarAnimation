@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sidebaranimation/bloc/navigation_bloc.dart';
+import 'package:sidebaranimation/pages/counterPage.dart';
 import 'package:sidebaranimation/pages/homePage.dart';
 import 'package:sidebaranimation/pages/myOrderPage.dart';
 import 'package:sidebaranimation/slidebar.dart';
@@ -17,7 +18,7 @@ class _SlideBarLayoutState extends State<SlideBarLayout> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           body: BlocProvider<NavigationBloc>(
-            create: (context) => new NavigationBloc(HomePage()),
+            create: (context) => new NavigationBloc(CounterPage()),
             child: Stack(
               children: <Widget>[
                 BlocBuilder<NavigationBloc,Widget>(builder: (context, Widget widget){

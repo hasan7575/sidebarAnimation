@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sidebaranimation/bloc/counter_bloc.dart';
 import 'package:sidebaranimation/slideBarLayout.dart';
 
 void main() {
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SlideBarLayout(),
+      home: BlocProvider(create: (context)=>new CounterBloc(0),child: SlideBarLayout(),)
     );
   }
 }
